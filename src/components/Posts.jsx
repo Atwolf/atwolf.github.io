@@ -1,34 +1,38 @@
-const posts = [
-  {
-    id: 1,
-    title: 'Getting Started with React',
-    date: '2026-01-15',
-    summary:
-      'A beginner-friendly guide to building your first React application from scratch.',
-  },
-  {
-    id: 2,
-    title: 'Understanding JavaScript Closures',
-    date: '2026-01-28',
-    summary:
-      'Deep dive into closures and how they work under the hood in JavaScript.',
-  },
-  {
-    id: 3,
-    title: 'CSS Grid vs Flexbox',
-    date: '2026-02-05',
-    summary:
-      'When to use CSS Grid and when Flexbox is the better choice for your layout.',
-  },
-]
+import parseFrontmatter from '../utils/parseFrontmatter'
 
-function Posts() {
+const postModules = import.meta.glob('/posts/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+})
+
+const posts = Object.entries(postModules)
+  .map(([path, raw]) => {
+    const slug = path.split('/').pop().replace(/\.md$/, '')
+    const { meta, content } = parseFrontmatter(raw)
+    return { slug, content, ...meta }
+  })
+  .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
+
+function Posts({ onSelectPost }) {
   return (
-    <section id="posts" className="section posts">
+    <section id="posts" className="section">
       <h2>Posts</h2>
       <div className="posts-grid">
         {posts.map((post) => (
-          <article key={post.id} className="post-card">
+          <article
+            key={post.slug}
+            className="post-card"
+            onClick={() => onSelectPost(post)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                onSelectPost(post)
+              }
+            }}
+          >
             <span className="post-date">{post.date}</span>
             <h3>{post.title}</h3>
             <p>{post.summary}</p>
@@ -39,4 +43,5 @@ function Posts() {
   )
 }
 
+export { posts }
 export default Posts

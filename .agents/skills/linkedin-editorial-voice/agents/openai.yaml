@@ -1,0 +1,7 @@
+interface:
+  display_name: "LinkedIn Editorial Voice"
+  short_description: "Principal-engineer LinkedIn voice system"
+  default_prompt: "Use $linkedin-editorial-voice to draft or revise a LinkedIn post in my principal-engineer voice."
+
+policy:
+  allow_implicit_invocation: true

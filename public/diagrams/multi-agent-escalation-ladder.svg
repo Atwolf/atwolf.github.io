@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="300" viewBox="0 0 1040 300" role="img" aria-labelledby="title desc">
+  <title id="title">Escalation boundary</title>
+  <desc id="desc">A simple progression from one model call to tools, workflow, orchestration, and autonomy.</desc>
+  <defs>
+    <style>
+      .title { font: 700 32px Inter, Arial, sans-serif; fill: #2f2f2f; }
+      .label { font: 700 21px Inter, Arial, sans-serif; fill: #3f7fe5; }
+      .line { stroke: #b9cef4; stroke-width: 6; stroke-linecap: round; }
+      .node { fill: #ffffff; stroke: #4f86e8; stroke-width: 7; }
+      .dot { fill: #6f99e6; opacity: .85; }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff" />
+  <text x="520" y="48" text-anchor="middle" class="title">Escalation Boundary</text>
+  <text x="520" y="84" text-anchor="middle" style="font: 500 17px Inter, Arial, sans-serif; fill: #626262;">Add the next abstraction only when the current boundary fails.</text>
+
+  <line x1="140" y1="150" x2="900" y2="150" class="line" />
+  <circle cx="140" cy="150" r="27" class="node" />
+  <circle cx="330" cy="150" r="27" class="node" />
+  <circle cx="520" cy="150" r="27" class="node" />
+  <circle cx="710" cy="150" r="27" class="node" />
+  <circle cx="900" cy="150" r="27" class="node" />
+
+  <circle cx="235" cy="150" r="16" class="dot" />
+  <circle cx="425" cy="150" r="16" class="dot" />
+  <circle cx="615" cy="150" r="16" class="dot" />
+  <circle cx="805" cy="150" r="16" class="dot" />
+
+  <text x="140" y="230" text-anchor="middle" class="label">Prompt</text>
+  <text x="330" y="230" text-anchor="middle" class="label">Tools</text>
+  <text x="520" y="230" text-anchor="middle" class="label">Workflow</text>
+  <text x="710" y="230" text-anchor="middle" class="label">Workers</text>
+  <text x="900" y="230" text-anchor="middle" class="label">Autonomy</text>
+</svg>

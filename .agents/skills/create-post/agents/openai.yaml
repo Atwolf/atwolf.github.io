@@ -1,0 +1,7 @@
+interface:
+  display_name: "Create Post"
+  short_description: "Create branch and markdown post draft"
+  default_prompt: "Use $create-post to create a new post draft named <title>."
+
+policy:
+  allow_implicit_invocation: true

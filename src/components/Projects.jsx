@@ -111,9 +111,6 @@ function Projects() {
         <h2 id="project-rail-title" className="project-rail-title">
           Projects
         </h2>
-        <p className="mt-1 text-[0.82rem] text-app-text-muted">
-          Selected systems, tools, and interfaces
-        </p>
       </div>
 
       {loading && <p className="mt-5 text-[0.94rem] text-app-text-soft">Loading projects&hellip;</p>}
@@ -131,13 +128,13 @@ function Projects() {
         </p>
       )}
 
-      <div className="grid gap-4 max-[1180px]:grid-cols-2 max-[640px]:grid-cols-1">
+      <div className="grid items-start gap-4 max-[1180px]:grid-cols-2 max-[720px]:grid-cols-1">
         {projects.map((repo, index) => {
           const project = normalizeProject(repo, index)
           return (
             <article
               key={project.id}
-              className="group block rounded-lg border border-app-border bg-app-panel p-3.5 text-app-text transition-colors hover:border-app-accent-2/50"
+              className="group block self-start rounded-lg border border-app-border bg-app-panel p-3.5 text-app-text transition-colors hover:border-app-accent-2/50"
               style={{ '--project-accent': project.accent }}
             >
               {project.demo && (
@@ -182,8 +179,8 @@ function Projects() {
                 </div>
               )}
 
-              <div className="mt-3 flex items-center justify-end gap-3 border-t border-app-border/80 pt-3 font-mono text-[0.72rem] leading-normal text-app-accent">
-                <div className="flex shrink-0 items-center gap-2">
+              <div className="mt-3 flex items-center justify-center border-t border-app-border/80 pt-3 font-mono text-[0.72rem] leading-normal text-app-accent">
+                <div className="flex w-full items-center justify-center gap-4">
                   <a
                     href={project.source}
                     target="_blank"

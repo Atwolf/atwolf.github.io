@@ -38,8 +38,8 @@
   --ember-light-fg-2: #5a5347;
   --ember-light-fg-3: #857c6d;
   --ember-light-fg-4: #ada493;
-  --ember-light-accent: #1e9e92;
-  --ember-light-accent-hover: #178a7f;
+  --ember-light-accent: #198f84;
+  --ember-light-accent-hover: #13786f;
   --ember-light-accent-bg: #dbf1ee;
   --ember-light-warning: #b5750a;
   --ember-light-warning-bg: #fbefd4;
@@ -308,7 +308,7 @@
 .project-rail::before {
   content: "";
   position: absolute;
-  inset: 0 auto 0 0;
+  inset: -3rem auto -7rem 0;
   width: 1px;
   background: var(--theme-border);
 }

@@ -19,7 +19,7 @@ function Posts({ onSelectPost, variant = 'inline' }) {
   const Root = isRail ? 'aside' : 'section'
   const rootClassName = isRail
     ? 'sticky top-[90px] w-[min(25vw,340px)] min-w-[280px] shrink-0 self-start border-l border-app-border pl-9 max-[1180px]:static max-[1180px]:w-full max-[1180px]:min-w-0 max-[1180px]:border-l-0 max-[1180px]:pl-0'
-    : 'mb-16'
+    : 'mb-16 border-b border-app-border pb-8 max-[1180px]:mb-0 max-[640px]:pb-6'
   const accessibilityProps = isRail
     ? { 'aria-labelledby': 'writing-rail-title' }
     : { 'aria-label': 'Writing' }

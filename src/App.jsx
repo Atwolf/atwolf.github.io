@@ -90,16 +90,17 @@ function App() {
       <header className="sticky top-0 z-20 flex h-[var(--header-height)] items-center justify-between border-b border-app-border bg-[var(--theme-header)] px-10 backdrop-blur-xl max-[880px]:px-6 max-[640px]:h-auto max-[640px]:min-h-[var(--header-height)] max-[640px]:items-center max-[640px]:px-5 max-[640px]:py-4">
         <a
           href="#home"
-          className="inline-flex items-center gap-3 leading-none"
+          className="inline-flex rounded-lg px-3 py-2 leading-none transition-colors"
           onClick={handleNavigate('home')}
         >
-          <span className="h-3 w-3 rounded-full bg-app-accent" aria-hidden="true" />
           <span className="flex flex-col gap-1">
             <span className="font-brand text-[1.45rem] font-[650] text-app-heading">
               Aakash Tammana
             </span>
-            <span className="text-xs font-bold text-app-accent-2">
-              AI Engineer &amp; Creator
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-app-accent-2">
+              <span>Software Engineer</span>
+              <span aria-hidden="true">|</span>
+              <span>Creator</span>
             </span>
           </span>
         </a>
@@ -108,9 +109,9 @@ function App() {
 
       <div className="flex min-h-[calc(100vh-var(--header-height))] items-start max-[880px]:block">
         <Sidebar onNavigate={handleNavigate} />
-        <div className="flex flex-1 items-start justify-center gap-[clamp(2rem,4vw,3rem)] px-10 py-12 pb-28 max-[1180px]:mx-auto max-[1180px]:max-w-[820px] max-[1180px]:flex-col max-[880px]:px-6 max-[880px]:py-9 max-[880px]:pb-20 max-[640px]:px-5 max-[640px]:py-8 max-[640px]:pb-16">
+        <div className="flex flex-1 items-start justify-center gap-[clamp(2rem,4vw,3rem)] px-10 py-12 pb-28 max-[1180px]:mx-auto max-[1180px]:max-w-[820px] max-[1180px]:flex-col max-[1180px]:gap-9 max-[880px]:px-6 max-[880px]:py-9 max-[880px]:pb-20 max-[640px]:gap-8 max-[640px]:px-5 max-[640px]:py-8 max-[640px]:pb-16">
           <main
-            className={`min-w-0 flex-1 basis-[684px] max-[1180px]:w-full max-[1180px]:max-w-none ${
+            className={`min-w-0 flex-1 basis-[684px] max-[1180px]:w-full max-[1180px]:max-w-none max-[1180px]:basis-auto max-[1180px]:flex-none ${
               isReading ? 'max-w-[760px]' : 'max-w-[704px]'
             }`}
           >

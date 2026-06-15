@@ -57,7 +57,7 @@ function Sidebar({ onNavigate }) {
               key={item.label}
               href={item.href || `#${item.id}`}
               onClick={item.id ? onNavigate(item.id) : undefined}
-              className="flex items-center gap-3 py-2 text-[0.92rem] font-semibold text-app-nav transition-colors hover:text-app-accent-2"
+              className="flex items-center gap-3 py-2 text-[0.92rem] font-semibold text-app-accent transition-colors hover:text-app-accent-2"
             >
               <FontAwesomeIcon icon={item.icon} className="h-[18px] w-[18px] shrink-0" aria-hidden="true" />
               <span>{item.label}</span>
@@ -66,7 +66,7 @@ function Sidebar({ onNavigate }) {
         </nav>
 
         <section className="mt-7 border-t border-app-border pt-5" aria-labelledby="currently-working-title">
-          <h2 id="currently-working-title" className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.12em] text-app-text-muted">
+          <h2 id="currently-working-title" className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.12em] text-app-accent">
             Currently
           </h2>
           <div className="mt-3 space-y-2.5">
@@ -78,7 +78,7 @@ function Sidebar({ onNavigate }) {
           </div>
         </section>
 
-        <div className="mt-auto border-t border-app-border pt-5">
+        <div className="mt-7 border-t border-app-border pt-5">
           <div className="grid grid-cols-4 gap-1.5" aria-label="External links">
             {externalLinks.map((link) => (
               <a
